@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# Home - Toorrii
 
-## Project info
+Welcome to the **Toorrii** platform — a personal and carefully crafted project focused on delivering a professional, seamless experience.
 
-**URL**: https://lovable.dev/projects/a9e4c11f-8f34-41d9-8d86-0d6de1920441
+🔗 **Quick Access:** [Visit the live platform →](https://toorrii.ahmedlitim.com)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Overview
 
-**Use Lovable**
+**Toorrii** is a personal project built with a focus on quality, UI consistency, and maintainability.  
+It combines modern frontend practices with a refined, brand-aligned design system.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a9e4c11f-8f34-41d9-8d86-0d6de1920441) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Prerequisites
 
-**Use your preferred IDE**
+Before running the project, make sure you have the following installed:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
+- **Git**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   ```bash
+   git clone https://gitlab.com/anis_amara/toorrii_equipe
+   cd home-toorrii
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+   ```bash
+   npm install
+   ```
+
+---
+
+## Development Server
+
+Start the development environment with:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at:
+👉 `http://localhost:3000` _(or your configured port)_
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Build for Production
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To generate an optimized production build:
 
-## What technologies are used for this project?
+```bash
+npm run build
+```
 
-This project is built with:
+This will create a ready-to-deploy build in the `dist` or `.next` directory depending on your framework setup.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## UI & Design
 
-Simply open [Lovable](https://lovable.dev/projects/a9e4c11f-8f34-41d9-8d86-0d6de1920441) and click on Share -> Publish.
+The platform’s design language has been **professionally refined**:
 
-## Can I connect a custom domain to my Lovable project?
+- Updated **color signature** for strong brand identity
+- Balanced **spacing, contrast, and typography**
+- Clean and modern **visual hierarchy**
+- Consistent **component alignment and interaction states**
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is **personal and proprietary**.
+All rights reserved © 2025 Ahmed.
+Unauthorized use, copying, or distribution of this project or its components is strictly prohibited.
+For inquiries, please contact the author directly.
+
+---
+
+**Made with passion and precision by Ahmed Litim.**
