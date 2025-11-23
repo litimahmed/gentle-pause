@@ -1,7 +1,26 @@
+/**
+ * Tailwind CSS Configuration
+ * 
+ * This file configures Tailwind CSS for the Toorrii application.
+ * It extends the default theme with custom colors, animations, and utilities
+ * that match the design system defined in index.css.
+ * 
+ * Key Customizations:
+ * - Custom color palette using HSL color variables
+ * - Brand gradient backgrounds
+ * - Custom shadows for elevated UI elements
+ * - Animation keyframes and utilities
+ * - Responsive container configuration
+ * 
+ * @see index.css for CSS variable definitions
+ */
+
 import type { Config } from "tailwindcss";
 
 export default {
+	// Enable dark mode with class-based toggling
 	darkMode: ["class"],
+	// Specify which files to scan for Tailwind classes
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -10,6 +29,7 @@ export default {
 	],
 	prefix: "",
 	theme: {
+		// Container configuration for responsive layouts
 		container: {
 			center: true,
 			padding: '2rem',
@@ -18,6 +38,7 @@ export default {
 			}
 		},
 		extend: {
+			// Custom color system using HSL variables from index.css
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -69,21 +90,25 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			// Custom gradient backgrounds
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-subtle': 'var(--gradient-subtle)'
 			},
+			// Custom shadow utilities for depth and elevation
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)'
 			},
+			// Border radius utilities
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			// Custom animation keyframes
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
@@ -120,6 +145,7 @@ export default {
 					'66%': { transform: 'translateY(15px) scale(0.9) rotate(-1deg)' }
 				}
 			},
+			// Animation utilities - can be applied with animate-* classes
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
@@ -132,5 +158,6 @@ export default {
 			}
 		}
 	},
+	// Include tailwindcss-animate plugin for additional animation utilities
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
