@@ -1,56 +1,91 @@
+/**
+ * Global Styles and Design System
+ * 
+ * This file contains the complete design system for the Toorrii application.
+ * All colors, gradients, shadows, and global styles are defined here using
+ * CSS custom properties (variables).
+ * 
+ * Design Principles:
+ * - All colors use HSL format for consistency and easy manipulation
+ * - Semantic naming for colors (primary, secondary, etc.) rather than literal names
+ * - All components use these variables for consistent theming
+ * - Custom animations for smooth user interactions
+ * 
+ * Color Palette:
+ * - Primary: Teal/Green professional tones
+ * - Secondary: Lighter teal for accents
+ * - Background: Light neutral tones
+ * - Foreground: Dark text for readability
+ * 
+ * @author Toorrii Design Team
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ===========================================
+   DESIGN SYSTEM: CSS CUSTOM PROPERTIES
+   All colors MUST be in HSL format
+   =========================================== */
 
 @layer base {
+  /* Light mode color variables */
   :root {
-    --background: 0 0% 99%;
-    --foreground: 182 86% 14%;
+    /* Base colors - Main surface and text colors */
+    --background: 0 0% 99%;      /* Main page background */
+    --foreground: 182 86% 14%;   /* Main text color */
 
+    /* Card colors - For elevated UI elements */
     --card: 0 0% 99%;
     --card-foreground: 182 86% 14%;
 
+    /* Popover colors - For floating UI elements */
     --popover: 0 0% 99%;
     --popover-foreground: 182 86% 14%;
 
-    --primary: 182 86% 14%;
-    --primary-foreground: 0 0% 99%;
-    --primary-light: 176 28% 35%;
-    --primary-dark: 182 90% 10%;
+    /* Primary brand colors */
+    --primary: 182 86% 14%;           /* Main brand color - Teal */
+    --primary-foreground: 0 0% 99%;   /* Text on primary surfaces */
+    --primary-light: 176 28% 35%;     /* Lighter variant for gradients */
+    --primary-dark: 182 90% 10%;      /* Darker variant for emphasis */
 
+    /* Secondary colors - Supporting brand color */
     --secondary: 176 28% 35%;
     --secondary-foreground: 0 0% 99%;
 
+    /* Muted colors - For subtle backgrounds and secondary text */
     --muted: 155 27% 85%;
     --muted-foreground: 182 40% 30%;
 
+    /* Accent colors - For highlights and interactive elements */
     --accent: 174 19% 57%;
     --accent-foreground: 182 86% 14%;
 
+    /* Destructive colors - For error states and dangerous actions */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 99%;
 
+    /* Success colors - For positive feedback */
     --success: 174 19% 57%;
     --success-foreground: 182 86% 14%;
 
-    --border: 155 27% 85%;
-    --input: 155 20% 90%;
-    --ring: 182 86% 14%;
+    /* UI element colors */
+    --border: 155 27% 85%;    /* Border color for inputs and cards */
+    --input: 155 20% 90%;     /* Input background color */
+    --ring: 182 86% 14%;      /* Focus ring color */
 
-    /* Custom brand gradients - Professional teal gradients */
+    /* Custom brand gradients - Used for backgrounds and visual interest */
     --gradient-primary: linear-gradient(135deg, hsl(182, 86%, 14%), hsl(182, 90%, 10%));
     --gradient-hero: linear-gradient(135deg, hsl(176, 28%, 35%) 0%, hsl(182, 86%, 14%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 99%) 0%, hsl(155, 27%, 90%) 100%);
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 40px -10px hsl(182 86% 14% / 0.20);
-    --shadow-glow: 0 0 60px hsl(174 19% 57% / 0.20);
-    --shadow-card: 0 4px 20px hsl(182 86% 14% / 0.10);
+    /* Custom shadows - For depth and elevation */
+    --shadow-elegant: 0 10px 40px -10px hsl(182 86% 14% / 0.20);  /* Subtle elevation */
+    --shadow-glow: 0 0 60px hsl(174 19% 57% / 0.20);              /* Glow effect */
+    --shadow-card: 0 4px 20px hsl(182 86% 14% / 0.10);            /* Card elevation */
 
+    /* Border radius - Consistent rounded corners */
     --radius: 0.5rem;
 
     --sidebar-background: 162 30% 96%;
@@ -64,18 +99,30 @@ All colors MUST be HSL.
   }
 }
 
+/* ===========================================
+   BASE STYLES
+   Global styles applied to all elements
+   =========================================== */
+
 @layer base {
+  /* Apply border color to all elements */
   * {
     @apply border-border;
   }
 
+  /* Set base background and text color for the body */
   body {
     @apply bg-background text-foreground;
   }
 
-  /* Custom scrollbar styles */
+  /* ===========================================
+     CUSTOM SCROLLBAR STYLES
+     Styled scrollbars for WebKit and Firefox browsers
+     =========================================== */
+  
+  /* WebKit browsers (Chrome, Safari, Edge) */
   .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
+    width: 8px;  /* Scrollbar width */
   }
   
   .custom-scrollbar::-webkit-scrollbar-track {
@@ -93,27 +140,35 @@ All colors MUST be HSL.
     background: hsl(var(--primary-dark));
   }
 
-  /* Firefox scrollbar */
+  /* Firefox scrollbar styling */
   .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--primary)) hsl(var(--background));
   }
 
-  /* Infinite scroll animation - seamless loop */
+  /* ===========================================
+     INFINITE SCROLL ANIMATION
+     Used for the partnerships logo carousel
+     =========================================== */
+  
+  /* Keyframes for seamless infinite horizontal scroll */
   @keyframes scroll-infinite {
     0% {
       transform: translate3d(0, 0, 0);
     }
     100% {
+      /* Move exactly 50% to create seamless loop with duplicated content */
       transform: translate3d(-50%, 0, 0);
     }
   }
 
+  /* Apply infinite scroll animation */
   .animate-scroll-infinite {
     animation: scroll-infinite 25s linear infinite;
-    will-change: transform;
+    will-change: transform;  /* Performance optimization hint */
   }
 
+  /* Pause animation on hover for better user experience */
   .animate-scroll-infinite:hover {
     animation-play-state: paused;
   }
